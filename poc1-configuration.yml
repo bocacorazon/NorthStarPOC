@@ -1,0 +1,6 @@
+clusterName: ORG-ELSCLUSTER-SAND
+index: origin-v1
+esNodes:
+  - tr-es-cloud-org-elscluster-sand-3.amers2.cis.trcloud
+  - tr-es-cloud-org-elscluster-sand-2.amers2.cis.trcloud
+  - tr-es-cloud-org-elscluster-sand-1.amers2.cis.trcloud
