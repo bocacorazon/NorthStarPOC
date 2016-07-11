@@ -2,44 +2,30 @@ package com.tr.microsvcs.dw.model;
 
 import java.util.Date;
 
-/**
- * Created by u6034037 on 7/11/2016.
- */
 public class SearchableSpreadsheet {
 
-    public SearchableSpreadsheet(long id, long firmId)
-    {
-        SpreadsheetId = id;
-        FirmId = firmId;
-    }
-    public SearchableSpreadsheet()
-    {
-        SpreadsheetId = 0;
-        FirmId = 0;
-    }
+    private long SpreadsheetId;
+    private String SpreadsheetType;
+    private long FirmId;
 
-    public long SpreadsheetId;
-    public String SpreadsheetType;
-    public long FirmId;
-
-    public String Client;
-    public String User;
-    public long Version;
-    public String Name;
-    public String NameEng;
-    public String NameSimple;
-    public String CreatedBy;
-    public Date Created;
-    public String LastModifiedBy;
-    public Date Modified;
+    private String Client;
+    private String User;
+    private long Version;
+    private String Name;
+    private String NameEng;
+    private String NameSimple;
+    private String CreatedBy;
+    private Date Created;
+    private String LastModifiedBy;
+    private Date Modified;
 
     //[Attachment(Name = "file")]
-    public String File;
-    public long FileSize;
-    public String Keywords;
-    public String FileName;
-    public String ContentHash;
-    public String Description;
+    private String File;
+    private long FileSize;
+    private String Keywords;
+    private String FileName;
+    private String ContentHash;
+    private String Description;
 
     public long getSpreadsheetId() {
         return SpreadsheetId;
