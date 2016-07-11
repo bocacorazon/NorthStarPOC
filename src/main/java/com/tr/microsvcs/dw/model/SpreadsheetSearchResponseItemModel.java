@@ -1,5 +1,7 @@
 package com.tr.microsvcs.dw.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ public class SpreadsheetSearchResponseItemModel {
 
     public long id;
     public String name;
+    @JsonProperty("type")
     public String ssSubType;
     public List<String> highlights;
 

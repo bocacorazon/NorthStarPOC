@@ -4,178 +4,178 @@ import java.util.Date;
 
 public class SearchableSpreadsheet {
 
-    private long SpreadsheetId;
-    private String SpreadsheetType;
-    private long FirmId;
+    private long spreadsheetId;
+    private String spreadsheetType;
+    private long firmId;
 
-    private String Client;
-    private String User;
-    private long Version;
-    private String Name;
-    private String NameEng;
-    private String NameSimple;
-    private String CreatedBy;
-    private Date Created;
-    private String LastModifiedBy;
-    private Date Modified;
+    private String client;
+    private String user;
+    private long version;
+    private String name;
+    private String nameEng;
+    private String nameSimple;
+    private String createdBy;
+    private Date created;
+    private String lastModifiedBy;
+    private Date modified;
 
-    //[Attachment(Name = "file")]
-    private String File;
-    private long FileSize;
-    private String Keywords;
-    private String FileName;
-    private String ContentHash;
-    private String Description;
+    //[Attachment(name = "file")]
+    private String file;
+    private long fileSize;
+    private String keywords;
+    private String fileName;
+    private String contentHash;
+    private String description;
 
     public long getSpreadsheetId() {
-        return SpreadsheetId;
+        return spreadsheetId;
     }
 
     public void setSpreadsheetId(long spreadsheetId) {
-        SpreadsheetId = spreadsheetId;
+        this.spreadsheetId = spreadsheetId;
     }
 
     public String getSpreadsheetType() {
-        return SpreadsheetType;
+        return spreadsheetType;
     }
 
     public void setSpreadsheetType(String spreadsheetType) {
-        SpreadsheetType = spreadsheetType;
+        this.spreadsheetType = spreadsheetType;
     }
 
     public long getFirmId() {
-        return FirmId;
+        return firmId;
     }
 
     public void setFirmId(long firmId) {
-        FirmId = firmId;
+        this.firmId = firmId;
     }
 
     public String getClient() {
-        return Client;
+        return client;
     }
 
     public void setClient(String client) {
-        Client = client;
+        this.client = client;
     }
 
     public String getUser() {
-        return User;
+        return user;
     }
 
     public void setUser(String user) {
-        User = user;
+        this.user = user;
     }
 
     public long getVersion() {
-        return Version;
+        return version;
     }
 
     public void setVersion(long version) {
-        Version = version;
+        this.version = version;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getNameEng() {
-        return NameEng;
+        return nameEng;
     }
 
     public void setNameEng(String nameEng) {
-        NameEng = nameEng;
+        this.nameEng = nameEng;
     }
 
     public String getNameSimple() {
-        return NameSimple;
+        return nameSimple;
     }
 
     public void setNameSimple(String nameSimple) {
-        NameSimple = nameSimple;
+        this.nameSimple = nameSimple;
     }
 
     public String getCreatedBy() {
-        return CreatedBy;
+        return createdBy;
     }
 
     public void setCreatedBy(String createdBy) {
-        CreatedBy = createdBy;
+        this.createdBy = createdBy;
     }
 
     public Date getCreated() {
-        return Created;
+        return created;
     }
 
     public void setCreated(Date created) {
-        Created = created;
+        this.created = created;
     }
 
     public String getLastModifiedBy() {
-        return LastModifiedBy;
+        return lastModifiedBy;
     }
 
     public void setLastModifiedBy(String lastModifiedBy) {
-        LastModifiedBy = lastModifiedBy;
+        this.lastModifiedBy = lastModifiedBy;
     }
 
     public Date getModified() {
-        return Modified;
+        return modified;
     }
 
     public void setModified(Date modified) {
-        Modified = modified;
+        this.modified = modified;
     }
 
     public String getFile() {
-        return File;
+        return file;
     }
 
     public void setFile(String file) {
-        File = file;
+        this.file = file;
     }
 
     public long getFileSize() {
-        return FileSize;
+        return fileSize;
     }
 
     public void setFileSize(long fileSize) {
-        FileSize = fileSize;
+        this.fileSize = fileSize;
     }
 
     public String getKeywords() {
-        return Keywords;
+        return keywords;
     }
 
     public void setKeywords(String keywords) {
-        Keywords = keywords;
+        this.keywords = keywords;
     }
 
     public String getFileName() {
-        return FileName;
+        return fileName;
     }
 
     public void setFileName(String fileName) {
-        FileName = fileName;
+        this.fileName = fileName;
     }
 
     public String getContentHash() {
-        return ContentHash;
+        return contentHash;
     }
 
     public void setContentHash(String contentHash) {
-        ContentHash = contentHash;
+        this.contentHash = contentHash;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 }

@@ -5,7 +5,8 @@ server:
   adminConnectors:
   - type: http
     port: 9001
-
+swagger:
+  resourcePackage: com.tr.microsvcs.dw.resources
 defaultMaxResults: 9999
 clusterName: ORG-ELSCLUSTER-SAND
 index: origin-v1

@@ -2,6 +2,7 @@ package com.tr.microsvcs.dw;
 
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.hibernate.validator.constraints.*;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class NorthStarPocConfiguration extends Configuration {
     private String index;
 
     private int defaultMaxResults;
+
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
 
     @JsonProperty
     public List<String> getEsNodes() {

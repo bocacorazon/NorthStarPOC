@@ -1,5 +1,6 @@
 package com.tr.microsvcs.dw;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.tr.microsvcs.dw.dao.Impl.SpreadsheetDaoImpl;
 import com.tr.microsvcs.dw.dao.SpreadsheetDao;
 import com.tr.microsvcs.dw.health.EsHealthCheck;
@@ -8,6 +9,8 @@ import com.tr.microsvcs.dw.resources.SpreadsheetResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class NorthStarPocApplication extends Application<NorthStarPocConfiguration> {
 
@@ -22,6 +25,12 @@ public class NorthStarPocApplication extends Application<NorthStarPocConfigurati
 
     @Override
     public void initialize(final Bootstrap<NorthStarPocConfiguration> bootstrap) {
+        bootstrap.addBundle(new SwaggerBundle<NorthStarPocConfiguration>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(NorthStarPocConfiguration configuration) {
+                return configuration.swaggerBundleConfiguration;
+            }
+        });
     }
 
     @Override

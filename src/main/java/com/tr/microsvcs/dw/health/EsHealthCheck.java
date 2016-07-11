@@ -22,9 +22,6 @@ public class EsHealthCheck extends HealthCheck {
                 .cluster()
                 .prepareHealth()
                 .get();
-//                .setWaitForYellowStatus()
-//                .execute()
-//                .actionGet();
 
         String status = "Last status: " + chr.getStatus().name();
 
