@@ -34,6 +34,7 @@ public class SpreadsheetDaoImpl implements SpreadsheetDao {
     @Override
     public List<SearchableSpreadsheet> search(long firmId, String qString, String ssSubType, int maxResults) {
 
+        SearchResponse response;
         List<SearchableSpreadsheet> sss = new ArrayList<>();
 
         String[] excludedFields = new String[] { "file", "attributes"};
@@ -51,9 +52,9 @@ public class SpreadsheetDaoImpl implements SpreadsheetDao {
                                 .must(termQuery("spreadsheetType", ssSubType))
                 );
 
-        SearchResponse response = client.prepareSearch(index)
+        response = client.prepareSearch(index)
                 .setTypes(SS_TYPE)
-//                .setSearchType(SearchType.DFS_QUERY_AND_FETCH)
+                .setSearchType(SearchType.DFS_QUERY_AND_FETCH)
                 .setFetchSource(null, excludedFields)
                 .setQuery(q)
                 .setSize(maxResults)
