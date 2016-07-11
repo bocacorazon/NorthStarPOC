@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.*;
 
 import java.util.List;
 
-public class Poc1Configuration extends Configuration {
+public class NorthStarPocConfiguration extends Configuration {
 
     // TODO: implement service configuration
     @NotEmpty
@@ -17,6 +17,8 @@ public class Poc1Configuration extends Configuration {
 
     @NotEmpty
     private String index;
+
+    private int defaultMaxResults;
 
     @JsonProperty
     public List<String> getEsNodes() {
@@ -46,5 +48,15 @@ public class Poc1Configuration extends Configuration {
     @JsonProperty
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    @JsonProperty
+    public int getDefaultMaxResults() {
+        return defaultMaxResults;
+    }
+
+    @JsonProperty
+    public void setDefaultMaxResults(int defaultMaxResults) {
+        this.defaultMaxResults = defaultMaxResults;
     }
 }

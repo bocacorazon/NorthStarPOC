@@ -1,37 +1,39 @@
 package com.tr.microsvcs.dw;
 
+import com.tr.microsvcs.dw.dao.Impl.SpreadsheetDaoImpl;
+import com.tr.microsvcs.dw.dao.SpreadsheetDao;
 import com.tr.microsvcs.dw.health.EsHealthCheck;
 import com.tr.microsvcs.dw.managed.ManagedEsClient;
-import com.tr.microsvcs.dw.resources.Poc1Resource;
+import com.tr.microsvcs.dw.resources.SpreadsheetResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-public class Poc1Application extends Application<Poc1Configuration> {
+public class NorthStarPocApplication extends Application<NorthStarPocConfiguration> {
 
     public static void main(final String[] args) throws Exception {
-        new Poc1Application().run(args);
+        new NorthStarPocApplication().run(args);
     }
 
     @Override
     public String getName() {
-        return "poc1";
+        return "NorthStar Poc";
     }
 
     @Override
-    public void initialize(final Bootstrap<Poc1Configuration> bootstrap) {
-        // TODO: application initialization
+    public void initialize(final Bootstrap<NorthStarPocConfiguration> bootstrap) {
     }
 
     @Override
-    public void run(final Poc1Configuration configuration,
+    public void run(final NorthStarPocConfiguration configuration,
                     final Environment environment) {
 
         final ManagedEsClient managedEsClient = new ManagedEsClient(configuration);
         environment.lifecycle().manage(managedEsClient);
 
-        final Poc1Resource resource = new Poc1Resource(configuration.getEsNodes());
-        environment.jersey().register(resource);
+        final SpreadsheetDao ssDao = new SpreadsheetDaoImpl(managedEsClient.getClient(), configuration.getIndex());
+        final SpreadsheetResource ssResource = new SpreadsheetResource(ssDao, configuration.getDefaultMaxResults());
+        environment.jersey().register(ssResource);
 
         final EsHealthCheck healthCheck = new EsHealthCheck(managedEsClient.getClient());
         environment.healthChecks().register("ElasticSearch Cluster", healthCheck);

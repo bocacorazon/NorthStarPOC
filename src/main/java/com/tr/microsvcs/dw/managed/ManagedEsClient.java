@@ -1,6 +1,6 @@
 package com.tr.microsvcs.dw.managed;
 
-import com.tr.microsvcs.dw.Poc1Configuration;
+import com.tr.microsvcs.dw.NorthStarPocConfiguration;
 import com.tr.microsvcs.dw.util.TransportAddressHelper;
 import io.dropwizard.lifecycle.Managed;
 import org.elasticsearch.action.admin.cluster.health.ClusterHealthRequest;
@@ -15,9 +15,9 @@ import org.elasticsearch.common.transport.TransportAddress;
 public class ManagedEsClient implements Managed {
 
     private Client client = null;
-    private Poc1Configuration config;
+    private NorthStarPocConfiguration config;
 
-    public ManagedEsClient(final Poc1Configuration config) {
+    public ManagedEsClient(final NorthStarPocConfiguration config) {
         this.config = config;
         Settings settings = Settings.settingsBuilder()
                 .put("cluster.name", config.getClusterName())
