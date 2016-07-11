@@ -26,7 +26,6 @@ public class SpreadsheetResource {
     }
 
     @GET
-//    @Path("{firmId}/")
     @Timed
     public SpreadsheetSearchResponseModel get(@PathParam("firmId") long firmId
             , @PathParam("ssSubType") String ssSubType
@@ -40,23 +39,19 @@ public class SpreadsheetResource {
 
     private SpreadsheetSearchResponseModel searchableSpreadsheetsToResponseModel(String ssSubType, List<SearchableSpreadsheet> sss) {
 
-        SpreadsheetSearchResponseModel srm = new SpreadsheetSearchResponseModel();
+        SpreadsheetSearchResponseModel response = new SpreadsheetSearchResponseModel(sss.size(), ssSubType);
 
-        srm.setHits(sss.size());
-        srm.setSsSubType(ssSubType);
-
-        List<SpreadsheetSearchResponseItemModel> sim = new ArrayList<SpreadsheetSearchResponseItemModel>();
+        List<SpreadsheetSearchResponseItemModel> ssResponseItems = new ArrayList<SpreadsheetSearchResponseItemModel>();
 
         for (SearchableSpreadsheet ss: sss) {
-            SpreadsheetSearchResponseItemModel ssrim =
-                    new SpreadsheetSearchResponseItemModel(
+
+            ssResponseItems.add(new SpreadsheetSearchResponseItemModel(
                             ss.getSpreadsheetId(),
                             ss.getName(),
-                            ss.getSpreadsheetType()
-                    );
-            sim.add(ssrim);
+                            ss.getSpreadsheetType())
+            );
         }
-        srm.setResults(sim);
-        return srm;
+        response.setResults(ssResponseItems);
+        return response;
     }
 }

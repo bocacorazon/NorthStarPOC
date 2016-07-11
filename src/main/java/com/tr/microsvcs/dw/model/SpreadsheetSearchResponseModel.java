@@ -8,19 +8,25 @@ import java.util.List;
  * Created by u6034037 on 7/11/2016.
  */
 public class SpreadsheetSearchResponseModel {
-    public long hits;
+
+    public int numberOfHits;
 
     @JsonProperty("type")
     public String ssSubType;
 
-    public List<SpreadsheetSearchResponseItemModel> results;
-
-    public long getHits() {
-        return hits;
+    public SpreadsheetSearchResponseModel (int numberOfHits, String ssSubType) {
+        this.numberOfHits = numberOfHits;
+        this.ssSubType = ssSubType;
     }
 
-    public void setHits(long hits) {
-        this.hits = hits;
+    public List<SpreadsheetSearchResponseItemModel> results;
+
+    public int getNumberOfHits() {
+        return numberOfHits;
+    }
+
+    public void setNumberOfHits(int numberOfHits) {
+        this.numberOfHits = numberOfHits;
     }
 
     public List<SpreadsheetSearchResponseItemModel> getResults() {
